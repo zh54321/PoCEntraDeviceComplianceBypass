@@ -32,8 +32,5 @@ ROADrecon gather executed in 17.08 seconds and issued 1258 HTTP requests.
 ```
 
 # Credits
-
-This module includes a JWT parsing method that was initially adapted from the following blog post:
-
 - For the write-up: [TokenSmith – Bypassing Intune Compliant Device Conditional Access by JUMPSEC](https://labs.jumpsec.com/tokensmith-bypassing-intune-compliant-device-conditional-access/)
 - For discovery and sharing: TEMP43487580 (@TEMP43487580) & Dirk-jan, (@_dirkjan)
