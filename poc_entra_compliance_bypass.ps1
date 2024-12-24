@@ -7,7 +7,8 @@ Start-Process $Url
                     
                     
 #Wait for the Code parameter
-$codeValue = Read-Host "Prompt your code"
+write-host "Open Browser dev tools, authenticate and click on the URL in the error message (ms-appx-web://...)"
+$codeValue = Read-Host "Enter content of CODE parameter"
 
 #Define headers (adjust for your needs)             
 $Headers = @{
@@ -31,6 +32,7 @@ $Body = @{
 
 # Call the token endpoint to get the tokens
 $tokens = Invoke-RestMethod 'https://login.microsoftonline.com/organizations/oauth2/v2.0/token' -Method POST -Body $Body -Headers $Headers
+write-host 'Tokens stored in Variable $tokens'
 
-# Display the token
+# Display the tokens
 $tokens
