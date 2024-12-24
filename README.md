@@ -8,10 +8,10 @@ Open the Browser Developer tools and authenticate normally.
 
 After clicking on "Continue" you should see an error message in the Browser console:
 
-![image](https://github.com/user-attachments/assets/fc76f3fd-2ff3-45c3-9702-3094886c15f5)
+![image](https://github.com/user-attachments/assets/831852d2-d702-4a22-a56c-692c4a8ec6ea)
+
 
 Click on the URL in the Browser console (ms-appx-web://...) this will open the URL in a new tab.
-
 Copy the content of the code parameter into the script window. This will get you an access and refresh token (stored in $token):
 
 ![image](https://github.com/user-attachments/assets/ebaf3109-1d84-4da3-acb2-51b8ab641266)
