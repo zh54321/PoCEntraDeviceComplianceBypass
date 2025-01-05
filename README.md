@@ -34,4 +34,7 @@ ROADrecon gather executed in 17.08 seconds and issued 1258 HTTP requests.
 
 # Credits
 - For the write-up: [TokenSmith – Bypassing Intune Compliant Device Conditional Access by JUMPSEC](https://labs.jumpsec.com/tokensmith-bypassing-intune-compliant-device-conditional-access/)
-- For discovery and sharing: TEMP43487580 (@TEMP43487580) & Dirk-jan, (@_dirkjan)
+- For discovery and sharing: TEMP43487580 (@TEMP43487580)
+  - Presentation: https://i.blackhat.com/EU-24/Presentations/EU-24-Chudo-Unveiling-the-Power-of-Intune-Leveraging-Intune-for-Breaking-Into-Your-Cloud-and-On-Premise.pdf
+  - Pytune tool: https://github.com/secureworks/pytune
+- Dirk-jan, (@_dirkjan)
