@@ -17,20 +17,11 @@ Copy the content of the code parameter into the script window. This will get you
 
 ![image](https://github.com/user-attachments/assets/ebaf3109-1d84-4da3-acb2-51b8ab641266)
 
-The refresh token can, for example, be used to obtain an access token for Azure AD Graph (scope: user_impersonation) for example using https://github.com/zh54321/EntraTokenAid.git
+The refresh token can, for example, be used to obtain an access token for Azure AD Graph for example using https://github.com/zh54321/EntraTokenAid.git.
 
-![image](https://github.com/user-attachments/assets/53c23690-cde9-4505-b38a-a7f58a7e45dd)
-
-Or to run ROADrecon (https://github.com/dirkjanm/ROADtools) to enumerate the whole tenant:
-```powershell
-roadtx gettoken --refresh-token $tokens.refresh_token -c 9ba1a5c7-f17a-4de9-a1f1-6178c8d51223
-Requesting token for resource https://graph.windows.net
-Tokens were written to .roadtools_auth
-PS C:\Tools\EntraTokenAid> roadrecon gather
-Starting data gathering phase 1 of 2 (collecting objects)
-Starting data gathering phase 2 of 2 (collecting properties and relationships)
-ROADrecon gather executed in 17.08 seconds and issued 1258 HTTP requests.
-```
+Update February 2024:
+Microsoft changed the pre-consented scopes on the Azure AD Graph API (user_impersonation --> Service_PrincipalEndpoint.Read.All,User.Read).
+Therefore, it is not possible anymore to run tools like ROADrecon.
 
 # Credits
 - For the write-up: [TokenSmith – Bypassing Intune Compliant Device Conditional Access by JUMPSEC](https://labs.jumpsec.com/tokensmith-bypassing-intune-compliant-device-conditional-access/)
