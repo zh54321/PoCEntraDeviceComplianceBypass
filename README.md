@@ -1,9 +1,14 @@
 # POCEntraDeviceComplianceBypass
-A Conditional Access Policy in Entra ID which only require a compliant device can be bypassed using Intune Portal client ID and a special redirect URI.
+A Conditional Access Policy in Entra ID which only require a compliant device can be bypassed using Intune Portal client.
 
 Note that any other Conditional Access Policies and conditions you’ve configured in your tenant will still apply!
 
+Update February 2024:
+Microsoft changed the pre-consented scopes on the Azure AD Graph API (user_impersonation --> Service_PrincipalEndpoint.Read.All,User.Read).
+Therefore, it is not possible anymore to run tools like ROADrecon.
+
 # How To
+## Manual Approach using poc_entra_compliance_bypass.ps1
 1. Execute the script.
 2. Open the Browser Developer tools and authenticate normally.
 
@@ -17,11 +22,21 @@ Copy the content of the code parameter into the script window. This will get you
 
 ![image](https://github.com/user-attachments/assets/ebaf3109-1d84-4da3-acb2-51b8ab641266)
 
-The refresh token can, for example, be used to obtain an access token for Azure AD Graph for example using https://github.com/zh54321/EntraTokenAid.git.
+The refresh token can, for example, be used to obtain an access token for Azure AD Graph.
 
-Update February 2024:
-Microsoft changed the pre-consented scopes on the Azure AD Graph API (user_impersonation --> Service_PrincipalEndpoint.Read.All,User.Read).
-Therefore, it is not possible anymore to run tools like ROADrecon.
+## Using Entra Token Aid
+If you don’t want to hassle with copying things manually, you can simplify the process by using EntraTokenAid (https://github.com/zh54321/EntraTokenAid.git):
+``` powershell
+# Clone and import the tool
+git clone https://github.com/zh54321/EntraTokenAid.git
+cd EntraTokenAid
+Import-mdoule EntraTokenAid.psm1
+
+# Start the interactive authentication
+$tokens = Invoke-Auth -ClientID '9ba1a5c7-f17a-4de9-a1f1-6178c8d51223' -RedirectUrl 'urn:ietf:wg:oauth:2.0:oob'
+```
+<img alt="image" src="https://github.com/user-attachments/assets/62023ae1-29b8-416e-b0e5-d3eae807a211" />
+
 
 # Credits
 - For the write-up: [TokenSmith – Bypassing Intune Compliant Device Conditional Access by JUMPSEC](https://labs.jumpsec.com/tokensmith-bypassing-intune-compliant-device-conditional-access/)
